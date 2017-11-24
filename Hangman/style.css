@@ -1,0 +1,29 @@
+#contain
+{
+	background-color: grey;
+	padding: 10px;
+	margin: 10% auto;
+	width: 35%;
+	border-radius: 5px;
+	text-align: center;
+	display: block;
+}
+
+#entered
+{
+	display: none;
+}
+
+#PlayAgain
+{
+	display: none;
+	padding: 10px;
+	margin: 10% auto;
+	width: 35%;
+
+}
+#slika
+{
+	margin: 10% auto;
+	width: 55%;
+}

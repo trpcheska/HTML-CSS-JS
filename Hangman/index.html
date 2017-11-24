@@ -1,0 +1,134 @@
+</!DOCTYPE html>
+<html>
+<head>
+	<title>Besilka</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
+</head>
+<body onload="play()">
+	<div id="contain">
+		<div id="header">			
+			<br>
+			<p id="answer"></p>
+			<br>
+			<p id="done"> </p>
+			<button id="PlayAgain" onclick="play()">Play again</button>
+			<p id ="entered"> </p>
+			<br>
+		</div>
+			<img id="slika" src="images/Hangman-0.png">
+		<div id="letters">
+			<button type="button" onclick=setLetter('A')>A</button>
+			<button type="button" onclick=setLetter('B')>B</button>
+			<button type="button" onclick=setLetter('C')>C</button>
+			<button type="button" onclick=setLetter('D')>D</button>
+			<button type="button" onclick=setLetter('E')>E</button>
+			<button type="button" onclick=setLetter('F')>F</button>
+			<button type="button" onclick=setLetter('G')>G</button>
+			<button type="button" onclick=setLetter('H')>H</button>
+			<button type="button" onclick=setLetter('I')>I</button>
+			<button type="button" onclick=setLetter('J')>J</button>
+			<button type="button" onclick=setLetter('K')>K</button>
+			<button type="button" onclick=setLetter('L')>L</button>
+			<button type="button" onclick=setLetter('M')>M</button>
+			<button type="button" onclick=setLetter('N')>N</button>
+			<button type="button" onclick=setLetter('O')>O</button>
+			<button type="button" onclick=setLetter('P')>P</button>
+			<button type="button" onclick=setLetter('Q')>Q</button>
+			<button type="button" onclick=setLetter('R')>R</button>
+			<button type="button" onclick=setLetter('S')>S</button>
+			<button type="button" onclick=setLetter('T')>T</button>
+			<button type="button" onclick=setLetter('U')>U</button>
+			<button type="button" onclick=setLetter('V')>V</button>
+			<button type="button" onclick=setLetter('W')>W</button>
+			<button type="button" onclick=setLetter('X')>X</button>
+			<button type="button" onclick=setLetter('Y')>Y</button>
+			<button type="button" onclick=setLetter('Z')>Z</button>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		var Words =["SUN", "SKY", "PROGRAMMING", "LANGUAGES", "LEARNING" , "COMMIT", "PROJECT", "LEVEL", "GAME", "CONTEST" ];
+		var random;
+		//console.log(random);
+		var Yours= [];
+		var lives;
+		var answerA = [];	
+		var s;
+		var x;
+		var niza=[];
+		var count;
+		var flag;
+		function play()
+		{	random = Words[Math.floor(Math.random() * Words.length)];
+			console.log(random);
+			document.getElementById("PlayAgain").style.display = "none";
+			document.getElementById("slika").src = "images/Hangman-0.png";
+			document.getElementById("done").innerHTML = "";
+			count=0;
+			lives=6;
+			for(var i=0; i<random.length; i++) {
+				answerA[i]="_ ";
+			}
+			s = answerA.join(" ");
+			document.getElementById("answer").innerHTML = s;	
+		}
+		function setLetter(letter) {
+   			x = document.getElementById('entered').innerHTML + letter;
+   			x = x.split(" ").join("");
+
+   			if(Yours.indexOf(x)==-1){
+   			Yours.push(x);
+   			}
+   			//console.log(Yours);
+   			Find();
+   		}
+
+   		function Find() {	
+   				if(lives > 0){
+   					flag=false;
+	   				for(var i=0; i<random.length; i++) {	
+	   					if(random[i]==x) {	
+	   							answerA[i]=x;
+	   							//console.log(random[i], x);
+	   							count++;
+	   							if (flag==false){
+	   							flag=true;
+	   							}
+	   					}
+
+	   				}
+	   				if(flag==false)
+	  	 				lives--;
+	   						}
+	   				if(lives==5) {
+	   					document.getElementById("slika").src="images/Hangman-1.png";
+	   				}
+	   				if(lives==4) {
+	   					document.getElementById("slika").src="images/Hangman-2.png";	
+	   				}
+	   				if(lives==3) {
+	   					document.getElementById("slika").src="images/Hangman-3.png";	
+	   				}
+	   				if(lives==2) {
+	   					document.getElementById("slika").src="images/Hangman-4.png";
+	   					
+	   				}
+	   				if(lives==1) {
+	   					document.getElementById("slika").src="images/Hangman-5.png";
+	   				}
+	   				console.log(lives);
+	   				if(lives==0) {
+	   					document.getElementById("done").innerHTML = "Game Over";
+	   					document.getElementById("slika").src="images/Hangman-6.png";
+	   					document.getElementById("PlayAgain").style.display = "block";
+	   				}
+	   				if(random.length==count) {
+	   					document.getElementById("done").innerHTML = "Well Done";
+	   					document.getElementById("PlayAgain").style.display = "block";
+	   				}
+   				document.getElementById("answer").innerHTML = answerA.join(" ");
+   			}
+	</script>
+</body>
+</html>
