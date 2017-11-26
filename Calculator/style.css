@@ -1,0 +1,39 @@
+.button
+{
+	width: 50px;
+	height: 40px;
+	text-align: center;
+}
+
+.display input {
+	position: relative;
+	left:2px;
+	top: 2px;
+	height: 35px;
+	color: black;
+	text-align: right; 
+	font-size: 21px;
+	box-shadow: inset 0px 0px 20px rgba(0,0,0,0.05);
+	border: 1px solid rgb(170,170,170);
+	border-radius: 2px;
+
+}
+
+#eq
+{
+	background-color: rgb(51, 153, 255);
+	color: rgb(224, 224, 224);
+	text-align: center;
+}
+
+#numbers
+{
+	text-align: center;
+	background-color: rgb(255, 255, 255);
+}
+
+#operators
+{
+	text-align: center;
+}
+

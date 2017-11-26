@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="script.js">
+	</script>
+</head>
+<body>
+	<div align="center" id="contains">
+	<div class="display"><input type="text" id="display" readonly size="16">
+	<div class="buttons">
+	<p>
+		<input type="button" class="button" value="7" id="numbers" onclick='math("7")'>
+		<input type="button" class="button" value="8" id="numbers" onclick='math("8")'>
+		<input type="button" class="button" value="9" id="numbers" onclick='math("9")'>
+		<input type="button" class="button" value="&divide" id="operators" onclick='math("/")'>
+	</p>
+	<p>
+		<input type="button" class="button" value="6" id="numbers" onclick='math("6")'>
+		<input type="button" class="button" value="5" id="numbers" onclick='math("5")'>
+		<input type="button" class="button" value="4" id="numbers" onclick='math("4")'>
+		<input type="button" class="button" value="*" id="operators" onclick='math("*")'>
+	</p>
+	<p>
+		<input type="button" class="button" value="1" id="numbers" onclick='math("1")'>
+		<input type="button" class="button" value="2" id="numbers" onclick='math("2")'>
+		<input type="button" class="button" value="3" id="numbers" onclick='math("3")'>
+		<input type="button" class="button" value="-" id="operators" onclick='math("-")'>
+	</p>
+	<p>
+		<input type="button" class="button" value="0" id="numbers" onclick='math("0")'>
+		<input type="button" class="button" value="CE" id="CE" onclick ='c("")'>
+		<input type="button" class="button" value="=" id="eq" onclick='e()'>
+		<input type="button" class="button" value="+" id="operators" onclick='math("+")'>
+	</p>
+	</div>
+	</div>
+</body>
+</html>
